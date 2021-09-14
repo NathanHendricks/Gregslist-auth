@@ -13,7 +13,7 @@ class HousesService {
   async editHouse(houseId, userId, houseData) {
     const house = await this.getHouseById(houseId)
     if (userId !== house.creatorId.toString()) {
-      throw new Forbidden('You shall not pass')
+      throw new Forbidden('You shall not pass!!!')
     }
     house.bedrooms = houseData.bedrooms || house.bedrooms
     house.bathrooms = houseData.bathrooms || house.bathrooms
@@ -29,7 +29,7 @@ class HousesService {
   async removeHouse(houseId, userId) {
     const house = await this.getHouseById(houseId)
     if (userId !== house.creatorId.toString()) {
-      throw new Forbidden('You shall not pass')
+      throw new Forbidden('Run you Fools!!')
     }
     await house.remove()
     return house
