@@ -15,7 +15,7 @@ export const HouseSchema = new Schema(
       type: Number,
       required: [true, 'How Many levels?']
     },
-    imgUrl: { type: String },
+    imgurl: { type: String },
     year: {
       type: Number,
       min: 1100,
