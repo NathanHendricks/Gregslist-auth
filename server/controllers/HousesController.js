@@ -1,7 +1,7 @@
-import BaseController from '../utils/BaseController'
 import { Auth0Provider } from '@bcwdev/auth0provider'
-import { logger } from '../utils/Logger'
 import { housesService } from '../services/HousesService'
+import BaseController from '../utils/BaseController'
+import { logger } from '../utils/Logger'
 export class HousesController extends BaseController {
   constructor() {
     super('api/houses')
@@ -45,7 +45,7 @@ export class HousesController extends BaseController {
 
   async removeHouse(req, res, next) {
     try {
-      const house = await housesService.removeHouse(req.params.houseId, req.UserInfo.id)
+      const house = await housesService.removeHouse(req.params.houseId, req.userInfo.id)
       res.send(house)
     } catch (error) {
       next(error)
