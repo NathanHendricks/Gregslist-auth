@@ -34,7 +34,7 @@ export class HousesController extends BaseController {
 
   async createHouse(req, res, next) {
     try {
-      logger.log('who is the user', req.UserInfo)
+      logger.log('who is the user', req.userInfo)
       req.body.creatorId = req.userInfo.id
       const house = await housesService.createHouse(req.body)
       res.send(house)
@@ -54,7 +54,7 @@ export class HousesController extends BaseController {
 
   async editHouse(req, res, next) {
     try {
-      const house = await housesService.editHouse(req.params.houseId, req.UserInfo.id, req.body)
+      const house = await housesService.editHouse(req.params.houseId, req.userInfo.id, req.body)
       res.send(house)
     } catch (error) {
       next(error)

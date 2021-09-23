@@ -18,7 +18,7 @@ class HousesService {
     house.bedrooms = houseData.bedrooms || house.bedrooms
     house.bathrooms = houseData.bathrooms || house.bathrooms
     house.level = houseData.level || house.level
-    house.imgurl = houseData.imgurl || house.imgurl
+    house.img = houseData.img || house.img
     house.year = houseData.year || house.year
     house.price = houseData.price || house.price
     house.description = houseData.description || house.description
